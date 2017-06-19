@@ -3,13 +3,13 @@
 
 static std::mt19937 gen;
 
-DEG::DEG(bool on, double lower, double upper, double realFPH, double estimFPH,
+DEG::DEG(double lower, double upper, double realFPH, double estimFPH,
 		double avg, double var, bool mode, int distribution,
 		char* name) {
 	DEG::name = name;
 	DEG::distribution = distribution;
 	DEG::mode = mode;
-	DEG::on = on;
+	DEG::on = false;
 	DEG::estimFPH = estimFPH;
 	DEG::lowerBound = lower;
 	DEG::upperBound = upper;
@@ -18,6 +18,7 @@ DEG::DEG(bool on, double lower, double upper, double realFPH, double estimFPH,
 	DEG::DTC = 0;
 	DEG::avgPktWeight = avg;
 	DEG::varPktWeight = var;
+
 	gen.seed(time(NULL));
 }
 
@@ -44,6 +45,10 @@ bool DEG::needToSend(int i) {
 
 double DEG::send() {
 	double weight = packetWeight();
+
+	if( realFPH > 30){  
+		weight *= (realFPH / 60);
+	}
 
 	++nReq;
 	DTC += weight;

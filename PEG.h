@@ -6,8 +6,6 @@
 
 using namespace std;
 
-//sudo g++ PEG.cpp -o PEG -std=gnu++11
-
 class PEG: public DEG {
 private:
 	double limit; // Send or not? Gaussian distribution, if go beyond "limit" -> i send the packet
@@ -17,7 +15,7 @@ public:
 	virtual ~PEG() {
 	}
 	;
-	PEG(bool on, double lower, double upper, double realFPH, double estimFPH,
+	PEG(double lower, double upper, double realFPH, double estimFPH,
 			double avg, double var, double t_avg, double t_var, bool mode,
 			int distribution, double limit, char* name
 			);

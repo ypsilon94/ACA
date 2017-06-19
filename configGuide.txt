@@ -1,54 +1,51 @@
 n_experiments
-1000			<--Number of runs of an experiment on tot_min
+10000				<--Number of runs of an experiment on tot_min
 tot_min
-40320			<-- Total time in minutes
-false	<-- deterministic on/off?
-480	<-- mean time ON				
-960	<-- mean time OFF
+40320				<-- Total time in minutes
+true				<-- deterministic time_on/off?
+18000				<-- mean time ON in a month | 300h = 18000
+false				<-- Deterministic Seed?
+20011994			<-- Deterministic Seed Number
+0				<-- On/Off Probabilistic Distribution: 0 exponential | 1 gaussian 		
 RemoteRouting
-true			<--bool on   	IS THE MODULE TURNED ON?
 2				<--int lower	LOWERBOUND OF REQUESTS PER HOUR
 60				<--int upper	UPPERBOUND OF REQUESTS PER HOUR
 6				<--int realFPH	INITIAL FREQUENCY OF REQUESTS PER HOUR
 6				<--int estimFPH	ESTIMATED FREQUENCY OF REQUESTS PER HOUR 
 20				<--double avg	MEAN (IN KB) OF THE WEIGHT OF PACKETS SENT BY THIS MODULE
 3				<--double var	STANDARD DEVIATION (IN KB) OF THE WEIGHTS OF PACKETS SENT BY THIS MODULE
-true			<--bool mode	IF FALSE THE WEIGHT OF PACKETS CAN DIFFER FOR EACH PACKET, ACCORDING TO AVG AND VAR VALUES
+true				<--bool mode	IF FALSE THE WEIGHT OF PACKETS CAN DIFFER FOR EACH PACKET, ACCORDING TO AVG AND VAR VALUES
 0				<--int distribution		TO CONTROL WHICH DISTRIBUTION TO CHOOSE IN ORDER TO LET PACKETS' WEIGHT A RANDOM VARIABLE: 0 gaussian | 1 flat | 2 exponential
 ItineraryPoints
-true			<--bool on 
 0				<--int lower
 200				<--int upper
 30				<--int realFPH
 30				<--int estimFPH
 1				<--double avg
 0.2				<--double var
-true			<--bool mode : true det | false prob
+true				<--bool mode : true det | false prob
 0				<--int distribution
 FCDSlots
-true			<--bool on   
 0				<--int lower
 60				<--int upper
 30				<--int realFPH
 30				<--int estimFPH
 1				<--double avg
 0.2				<--double var
-true			<--bool mode : true det | false prob
+true				<--bool mode : true det | false prob
 0				<--int distribution
 TrafficFlow
-true			<--bool on   
 6				<--int lower
 30				<--int upper
 20				<--int realFPH
 20				<--int estimFPH
 40				<--double avg
 4				<--double var
-true			<--bool mode : true det | false prob
+true				<--bool mode : true det | false prob
 0				<--int distribution
 DrivingEvents
-true			<--bool on
 1				<--int lower
-1				<--int upper
+10				<--int upper
 6				<--int realFPH
 6				<--int estimFPH
 1				<--double avg
@@ -61,13 +58,3 @@ true			<--bool mode : true det | false prob
 Analyzer
 0				<--int mode		
 330000			<--double band 	THE TOTAL BANDWITH (IN KB)
-0				<-- w[0]	THE INITIAL VALUE OF THE KB SENT BY REMOTEROUTING
-0				<-- w[1]	THE INITIAL VALUE OF THE KB SENT BY ITINERARYPOINTS
-0				<-- w[2]	THE INITIAL VALUE OF THE KB SENT BY FCDSLOTS
-0				<-- w[3]	THE INITIAL VALUE OF THE KB SENT BY TRAFFICFLOW
-0				<-- w[4]	THE INITIAL VALUE OF THE KB SENT BY DRIVINGEVENTS
-0				<-- n[0]	THE INITIAL VALUE OF THE NUMBER OF REQUESTS SENT BY REMOTEROUTING
-0				<-- n[1]	THE INITIAL VALUE OF THE NUMBER OF REQUESTS SENT BY ITINERARYPOINTS
-0				<-- n[2]	THE INITIAL VALUE OF THE NUMBER OF REQUESTS SENT BY FCDSLOTS
-0				<-- n[3]	THE INITIAL VALUE OF THE NUMBER OF REQUESTS SENT BY TRAFFICFLOW
-0				<-- n[4]	THE INITIAL VALUE OF THE NUMBER OF REQUESTS SENT BY DRIVINGEVENTS

@@ -10,8 +10,6 @@
 
 using namespace std;
 
-//sudo g++ DEG.cpp -o DEG -std=gnu++11
-
 class DEG {
 protected:
 	double lowerBound, upperBound, realFPH, estimFPH, DTC, avgPktWeight,
@@ -27,7 +25,7 @@ public:
 
 	bool on;
 
-	DEG(bool on, double lower, double upper, double realFPH, double estimFPH,
+	DEG(double lower, double upper, double realFPH, double estimFPH,
 			double avg, double var, bool mode, int distribution,
 			 char* name);
 
